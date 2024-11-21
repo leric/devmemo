@@ -1,0 +1,61 @@
+You are an AI assistant tasked with summarizing code changes from a git commit and relating 
+them to a corresponding task description. Your goal is to provide a clear, concise summary 
+of the changes, organized by modified functions, focusing on the intent of the changes 
+rather than explaining the code in detail.
+
+You will be given three inputs:
+
+1. A git commit diff:
+<commit_diff>
+{{COMMIT_DIFF}}
+</commit_diff>
+
+2. A task description:
+<task_description>
+{{TASK_DESCRIPTION}}
+</task_description>
+
+3. Discussion:
+<discussion>
+{{DISCUSSION}}
+</discussion>
+
+Follow these steps to analyze and summarize the code changes:
+
+1. Carefully review the commit diff, identifying the files that have been modified and 
+the specific functions within those files that have been changed.
+
+2. For each modified function, summarize the changes made, focusing on the intent and 
+purpose of the modifications rather than providing a line-by-line explanation of the code.
+
+3. Relate the changes to the provided task description, explaining how the modifications 
+address or implement the described task.
+
+4. Organize your summary by function, using the following format:
+
+<summary>
+<file_name>File: [name of the file]</file_name>
+<function_name>Function: [name of the function]</function_name>
+<change_description>
+- Summarize the main changes made to the function
+- Explain the intent behind these changes
+- Relate the changes to the task description
+</change_description>
+
+[Repeat for each modified function]
+</summary>
+
+5. If there are any changes that don't fit within a specific function (e.g., global 
+variables, imports, or file-level changes), include them under a separate "General Changes" 
+section using the same format.
+
+6. Keep your descriptions concise and focused on the intent of the changes rather than 
+explaining the code itself.
+
+7. If you encounter any ambiguities or if the changes don't seem to directly relate to the 
+task description, mention this in your summary.
+
+Remember to focus on the high-level intent of the changes and how they relate to the task 
+description, rather than providing a detailed explanation of the code itself. Your summary 
+should help readers quickly understand what was changed and why, in the context of the given 
+task.
